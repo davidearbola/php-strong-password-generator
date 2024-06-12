@@ -1,7 +1,8 @@
 <?php
 
 $UserNumber = $_GET['UserNumber'];
-$password = ''
+$password = '';
+$dizionario = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!£$%&?àèìòù'
 
 
 ?>
@@ -19,7 +20,8 @@ $password = ''
     <h1>Password Generata:</h1>
 
     <?php for ($i = 0; $i < $UserNumber; ++$i) {
-        $password .= "x";
+        $numero = rand(0, strlen($dizionario) - 1);
+        $password .= $dizionario[$numero];
     }
     ?>
     <span> <?php echo $password ?> </span>
